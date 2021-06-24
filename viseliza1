@@ -1,0 +1,13 @@
+require_relative "vis_game"
+require_relative "vis_result"
+
+printer = ResultPrinter.new 
+puts 'Виселица. Версия 2'
+slovo = ARGV[0]
+vis_game = Game.new(slovo)
+
+while vis_game.status == 0 do 
+    printer.print_status(vis_game)
+    vis_game.ask_next_letter
+end
+printer.print_status(vis_game)
