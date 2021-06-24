@@ -1,0 +1,52 @@
+unless File.exist?('./questions.txt')
+    abort 'файл не найден'
+end
+unless File.exist?('./answers.txt')
+    abort 'файл не найден'
+end
+
+file1 = File.new('./questions.txt','r:UTF-8')
+content1 = file1.readlines
+file1.close
+
+file2 = File.new('./answers.txt')
+content2 = file2.readlines
+file2.close 
+
+puts 'мини-викторина. ответьте на вопросы:'
+puts 
+sleep 1
+
+
+right_all = 0
+index = 0
+
+while index < content1.size
+    puts 
+    puts content1[index]
+    user_answer = STDIN.gets.chomp
+    right = content2[index].chomp 
+
+    if user_answer == right
+        puts 'верно!'
+        right_all += 1
+    else puts 'неправильно. верный ответ - ' + right.to_s
+    end
+
+    index += 1
+end
+puts 
+puts "правильных ответов #{right_all} из #{content1.size} вопросов "
+
+
+#В ФАЙЛЕ С ВОПРОСАМИ:
+
+#Сколько байт в килобайте?
+#В каком году Гагарин полетел в космос?
+#Сколько дней в высокосном году?
+
+#В ФАЙЛЕ С ОТВЕТАМИ:
+
+#1024
+#1961
+#366
