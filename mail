@@ -1,0 +1,36 @@
+
+require 'pony'
+require 'io/console'
+
+my_mail = 'infpot@list.ru' 
+
+puts "введите пароль от почты - #{my_mail}"
+password = STDIN.noecho(&:gets).chomp
+
+puts "кому отправить? введите адрес"
+send_to = STDIN.gets.chomp
+
+puts 'что написать в письме?'
+body = STDIN.gets.chomp.encode("UTF-8")
+
+
+Pony.mail({ 
+    :subject => 'Привет из программы на руби!', 
+    :body => body, 
+    :to => send_to, 
+    :from => my_mail, 
+  
+    :via => :smtp,
+    :via_options => {
+      :address => 'smtp.mail.ru', 
+      :port => '465', 
+      :tls => true, 
+      :user_name => my_mail, 
+      :password => password, 
+      :authentication => :plain # "обычный" тип авторизации по паролю
+    }
+}
+)
+puts 'письмо отправлено'
+
+#В КОНСОЛИ ПРОПИСАТЬ : gem install pony
