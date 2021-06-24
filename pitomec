@@ -1,0 +1,60 @@
+class Dragon   #класс вашего животного
+    def make_up_name   #задаем имя
+        @name = 'Loti'
+        puts @name + ' родился!'
+    end
+    def food  #кормежка
+        puts "кажется, у #{@name} урчит в животе"
+        puts 'сколько раз за день вы покормили питомца? от 1 до 3'
+        korm = gets.to_i
+        if korm < 3
+            puts "вы кормите #{@name}"
+        else puts "#{@name} сегодня уже поел!"
+        end
+    end
+    def walk(destination)
+        puts "вы выгуливаете #{@name} в #{destination}"
+        puts 'сколько в часах вы уже гуляете? 1, 2 или больше?'
+        hour = gets.to_i
+        if hour == 1 or hour == 0
+            puts "#{@name} может погулять еще немного"
+        else puts "#{@name} уже устал! Вы ведете его домой"
+        end
+    end
+    def goToBed
+        puts "вы укладываете #{@name} спать"
+        sleep 2
+        puts "#{@name} храпит, наполняя комнату дымом"
+        sleep 3
+        puts "#{@name} просыпается и сладко потягивается"
+    end
+    def toss 
+        puts "вы подбрасываете #{@name} в воздух"
+        puts 'он хихикает, обжигая вам брови'
+    end
+    def shake
+        puts 'вы нежно укачиваете питомца'
+        sleep 2
+        puts 'он засыпает...'
+        puts 'затем много ворочается и ...'
+        s = rand(2)
+        if s == 0
+            puts "#{@name} просыпается и хочет кушать"
+        elsif s == 1
+            puts "#{@name} спокойно спит несколько часов"
+        end
+    end
+end
+
+pitomec = Dragon.new   #новый экземпляр класса
+pitomec.make_up_name
+sleep 1
+pitomec.food
+sleep 1
+pitomec.walk('park')
+sleep 1
+pitomec.goToBed
+sleep 1
+pitomec.toss
+sleep 1
+pitomec.shake
