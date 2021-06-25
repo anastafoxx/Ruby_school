@@ -1,0 +1,46 @@
+def car(brand)
+    puts "отличный выбор, #{brand} сейчас в моде, давайте посмотрим"
+    sleep 2
+end
+
+def drive(speed)
+    puts 'нажмите на педаль газа'
+    sleep 2
+    puts 'не так резко! плавнее, воооот так'
+    sleep 2
+    puts "хотите разогнать до #{speed}? пристегнитесь!"
+    sleep 2
+end
+
+def sound
+    puts 'нажмите на гудок'
+    sleep 2
+    puts 'beeeep! beeeep!'
+    sleep 2
+end
+
+def headlights(brightness)  #фары-яркость, будем выбирать дальний свет/ближний (high-beam/low-beam)
+    puts "если вы хотите включить #{brightness}, вот кнопка"
+    sleep 2
+    puts 'посмотрите, какое прекрасное освещение, не правда ли?'
+    sleep 2
+end
+
+#парочка придуманных методов
+puts 'добро пожаловать в наш виртуальный автосалон!'
+sleep 2
+car('BMW')
+drive('120')
+sound
+headlights('low-beam')
+puts 'ну что, приедете в салон забирать?'
+otv = gets.chomp
+if otv == 'yes'
+    puts 'отлично! ждем вас!'
+else puts 'может быть, показать другую машину?'
+    car2 = gets.chomp
+    if car2 == 'yes'
+        puts 'измените методы в программе и попробуем новую!'
+    else puts 'что ж, жаль, приходите еще!'
+    end
+end
