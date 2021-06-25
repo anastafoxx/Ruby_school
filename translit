@@ -1,0 +1,6 @@
+#вводить только на англ, переводит на русс
+require 'translit'
+puts 'введите фразу для транслитерации:'
+a = gets.chomp.to_s
+transl = Translit.convert(a)
+puts transl.to_s
