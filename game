@@ -1,0 +1,31 @@
+puts 'введите вариант: 0 - камень, 1 - ножницы, 2 - бумага'
+variant = gets.to_i
+a = 'камень'
+b = 'ножницы'
+c = 'бумага'
+if variant == 0
+    puts "вы выбрали: #{a}"
+elsif variant == 1
+    puts "вы выбрали: #{b}"
+elsif variant == 2
+    puts "вы выбрали: #{c}"
+end
+komp = rand(3)
+if komp == 0
+    puts "компьютер выбрал: #{a}"
+elsif komp == 1
+    puts "компьютер выбрал: #{b}"
+elsif komp == 2
+    puts "компьютер выбрал: #{c}"
+end
+# логика игры: 0 бьет 1, 1 бьют 2, 2 бьет 0
+if variant == komp
+    puts 'ничья'
+elsif variant == 0 && komp == 1
+    puts 'вы выиграли'
+elsif variant == 1 && komp == 2
+    puts 'вы выиграли'
+elsif variant == 2 && komp == 0
+    puts 'вы выиграли'
+else puts 'выиграл компьютер'
+end
