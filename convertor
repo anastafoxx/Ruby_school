@@ -1,0 +1,20 @@
+
+puts 'какая у вас валюта на руках?'
+puts '1 - rub
+2 - dollar'
+val = gets.to_i
+if val == 1
+    puts 'сколько стоит 1 доллар?'
+    dol = gets.to_f
+    puts 'сколько рублей на руках?'
+    imeem = gets.to_f
+    zapas = imeem/dol
+    puts 'ваши запасы в долларах: ' + zapas.round(2).to_s
+elsif val == 2
+    puts 'сколько стоит 1 доллар?'
+    dol1 = gets.to_f
+    puts 'сколько долларов на руках?'
+    imeem1 = gets.to_f
+    zapas1 = imeem1*dol1
+    puts 'ваши запасы в рублях: ' + zapas1.round(2).to_s
+end
