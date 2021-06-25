@@ -1,0 +1,50 @@
+require_relative 'bodybuild.rb'
+system "cls"
+sleep 3
+
+kach1 = BodyDuilder.new
+kach2 = BodyDuilder.new
+kach3 = BodyDuilder.new
+
+5.times do
+    kach1.pump('triceps')
+end
+7.times do
+    kach1.pump('biceps')
+end
+10.times do
+    kach1.pump('deltovidka')
+end
+
+10.times do
+    kach2.pump('triceps')
+end
+3.times do
+    kach2.pump('biceps')
+end
+8.times do
+    kach2.pump('deltovidka')
+end
+
+2.times do
+    kach3.pump('triceps')
+end
+10.times do
+    kach3.pump('biceps')
+end
+6.times do
+    kach3.pump('deltovidka')
+end
+
+puts 'первый бодибилдер - '
+puts kach1.show_muscles
+puts 
+puts 'второй - '
+puts kach2.show_muscles
+puts 
+puts 'третий - '
+puts kach3.show_muscles
+puts
+puts 'оцените состояние мышц по 100 бальной шкале? :)'
+sost = gets.chomp.to_i
+puts "#{sost} - отлично!"
