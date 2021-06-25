@@ -1,0 +1,18 @@
+puts 'сегодня предлагается к просмотру фильм: '
+sleep 2
+
+file = File.new("./filmy_spisok.txt","r:UTF-8")
+
+unless File.exist?("./filmy_spisok.txt")
+    abort 'список фильмов не найден'    
+end
+content = file.readlines
+file.close
+
+number = rand(content.length)
+if number % 2 == 1
+    number -= 1
+end
+
+puts content[number]
+puts content[number+1]
